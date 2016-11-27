@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		450848931DE9F19400AD8606 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450848921DE9F19400AD8606 /* MainTableViewController.swift */; };
+		450848951DE9F25500AD8606 /* AddNewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450848941DE9F25500AD8606 /* AddNewTableViewController.swift */; };
+		450848971DEA0BFB00AD8606 /* SweetMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450848961DEA0BFB00AD8606 /* SweetMemory.swift */; };
+		4508489C1DEA324A00AD8606 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */; };
+		4560FC3C1DE63851008927CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC3B1DE63851008927CA /* AppDelegate.swift */; };
+		4560FC411DE63851008927CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4560FC3F1DE63851008927CA /* Main.storyboard */; };
+		4560FC441DE63852008927CA /* Sweet_Memories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC421DE63851008927CA /* Sweet_Memories.xcdatamodeld */; };
+		4560FC461DE63852008927CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4560FC451DE63852008927CA /* Assets.xcassets */; };
+		4560FC491DE63852008927CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4560FC471DE63852008927CA /* LaunchScreen.storyboard */; };
+		4560FC541DE63852008927CA /* Sweet_MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC531DE63852008927CA /* Sweet_MemoriesTests.swift */; };
+		4560FC5F1DE63852008927CA /* Sweet_MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC5E1DE63852008927CA /* Sweet_MemoriesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4560FC501DE63852008927CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4560FC301DE63851008927CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4560FC371DE63851008927CA;
+			remoteInfo = "Sweet Memories";
+		};
+		4560FC5B1DE63852008927CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4560FC301DE63851008927CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4560FC371DE63851008927CA;
+			remoteInfo = "Sweet Memories";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		450848921DE9F19400AD8606 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		450848941DE9F25500AD8606 /* AddNewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTableViewController.swift; sourceTree = "<group>"; };
+		450848961DEA0BFB00AD8606 /* SweetMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetMemory.swift; sourceTree = "<group>"; };
+		4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		4560FC381DE63851008927CA /* Sweet Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sweet Memories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4560FC3B1DE63851008927CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4560FC401DE63851008927CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4560FC431DE63851008927CA /* Sweet_Memories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sweet_Memories.xcdatamodel; sourceTree = "<group>"; };
+		4560FC451DE63852008927CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4560FC481DE63852008927CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4560FC4A1DE63852008927CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4560FC4F1DE63852008927CA /* Sweet MemoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet MemoriesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4560FC531DE63852008927CA /* Sweet_MemoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_MemoriesTests.swift; sourceTree = "<group>"; };
+		4560FC551DE63852008927CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4560FC5A1DE63852008927CA /* Sweet MemoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sweet MemoriesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4560FC5E1DE63852008927CA /* Sweet_MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sweet_MemoriesUITests.swift; sourceTree = "<group>"; };
+		4560FC601DE63852008927CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4560FC351DE63851008927CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC4C1DE63852008927CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC571DE63852008927CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4560FC2F1DE63851008927CA = {
+			isa = PBXGroup;
+			children = (
+				4560FC3A1DE63851008927CA /* Sweet Memories */,
+				4560FC521DE63852008927CA /* Sweet MemoriesTests */,
+				4560FC5D1DE63852008927CA /* Sweet MemoriesUITests */,
+				4560FC391DE63851008927CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4560FC391DE63851008927CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4560FC381DE63851008927CA /* Sweet Memories.app */,
+				4560FC4F1DE63852008927CA /* Sweet MemoriesTests.xctest */,
+				4560FC5A1DE63852008927CA /* Sweet MemoriesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4560FC3A1DE63851008927CA /* Sweet Memories */ = {
+			isa = PBXGroup;
+			children = (
+				4560FC3B1DE63851008927CA /* AppDelegate.swift */,
+				4560FC3F1DE63851008927CA /* Main.storyboard */,
+				4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */,
+				450848941DE9F25500AD8606 /* AddNewTableViewController.swift */,
+				450848961DEA0BFB00AD8606 /* SweetMemory.swift */,
+				450848921DE9F19400AD8606 /* MainTableViewController.swift */,
+				4560FC451DE63852008927CA /* Assets.xcassets */,
+				4560FC471DE63852008927CA /* LaunchScreen.storyboard */,
+				4560FC4A1DE63852008927CA /* Info.plist */,
+				4560FC421DE63851008927CA /* Sweet_Memories.xcdatamodeld */,
+			);
+			path = "Sweet Memories";
+			sourceTree = "<group>";
+		};
+		4560FC521DE63852008927CA /* Sweet MemoriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				4560FC531DE63852008927CA /* Sweet_MemoriesTests.swift */,
+				4560FC551DE63852008927CA /* Info.plist */,
+			);
+			path = "Sweet MemoriesTests";
+			sourceTree = "<group>";
+		};
+		4560FC5D1DE63852008927CA /* Sweet MemoriesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4560FC5E1DE63852008927CA /* Sweet_MemoriesUITests.swift */,
+				4560FC601DE63852008927CA /* Info.plist */,
+			);
+			path = "Sweet MemoriesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4560FC371DE63851008927CA /* Sweet Memories */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4560FC631DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet Memories" */;
+			buildPhases = (
+				4560FC341DE63851008927CA /* Sources */,
+				4560FC351DE63851008927CA /* Frameworks */,
+				4560FC361DE63851008927CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sweet Memories";
+			productName = "Sweet Memories";
+			productReference = 4560FC381DE63851008927CA /* Sweet Memories.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4560FC4E1DE63852008927CA /* Sweet MemoriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4560FC661DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet MemoriesTests" */;
+			buildPhases = (
+				4560FC4B1DE63852008927CA /* Sources */,
+				4560FC4C1DE63852008927CA /* Frameworks */,
+				4560FC4D1DE63852008927CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4560FC511DE63852008927CA /* PBXTargetDependency */,
+			);
+			name = "Sweet MemoriesTests";
+			productName = "Sweet MemoriesTests";
+			productReference = 4560FC4F1DE63852008927CA /* Sweet MemoriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4560FC591DE63852008927CA /* Sweet MemoriesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4560FC691DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet MemoriesUITests" */;
+			buildPhases = (
+				4560FC561DE63852008927CA /* Sources */,
+				4560FC571DE63852008927CA /* Frameworks */,
+				4560FC581DE63852008927CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4560FC5C1DE63852008927CA /* PBXTargetDependency */,
+			);
+			name = "Sweet MemoriesUITests";
+			productName = "Sweet MemoriesUITests";
+			productReference = 4560FC5A1DE63852008927CA /* Sweet MemoriesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4560FC301DE63851008927CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Mac air";
+				TargetAttributes = {
+					4560FC371DE63851008927CA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					4560FC4E1DE63852008927CA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4560FC371DE63851008927CA;
+					};
+					4560FC591DE63852008927CA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4560FC371DE63851008927CA;
+					};
+				};
+			};
+			buildConfigurationList = 4560FC331DE63851008927CA /* Build configuration list for PBXProject "Sweet Memories" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4560FC2F1DE63851008927CA;
+			productRefGroup = 4560FC391DE63851008927CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4560FC371DE63851008927CA /* Sweet Memories */,
+				4560FC4E1DE63852008927CA /* Sweet MemoriesTests */,
+				4560FC591DE63852008927CA /* Sweet MemoriesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4560FC361DE63851008927CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4560FC491DE63852008927CA /* LaunchScreen.storyboard in Resources */,
+				4560FC461DE63852008927CA /* Assets.xcassets in Resources */,
+				4560FC411DE63851008927CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC4D1DE63852008927CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC581DE63852008927CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4560FC341DE63851008927CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450848951DE9F25500AD8606 /* AddNewTableViewController.swift in Sources */,
+				4560FC441DE63852008927CA /* Sweet_Memories.xcdatamodeld in Sources */,
+				450848931DE9F19400AD8606 /* MainTableViewController.swift in Sources */,
+				450848971DEA0BFB00AD8606 /* SweetMemory.swift in Sources */,
+				4508489C1DEA324A00AD8606 /* MainTableViewCell.swift in Sources */,
+				4560FC3C1DE63851008927CA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC4B1DE63852008927CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4560FC541DE63852008927CA /* Sweet_MemoriesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4560FC561DE63852008927CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4560FC5F1DE63852008927CA /* Sweet_MemoriesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4560FC511DE63852008927CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4560FC371DE63851008927CA /* Sweet Memories */;
+			targetProxy = 4560FC501DE63852008927CA /* PBXContainerItemProxy */;
+		};
+		4560FC5C1DE63852008927CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4560FC371DE63851008927CA /* Sweet Memories */;
+			targetProxy = 4560FC5B1DE63852008927CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4560FC3F1DE63851008927CA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4560FC401DE63851008927CA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4560FC471DE63852008927CA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4560FC481DE63852008927CA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4560FC611DE63852008927CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4560FC621DE63852008927CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4560FC641DE63852008927CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sweet Memories/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-Memories";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4560FC651DE63852008927CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sweet Memories/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-Memories";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4560FC671DE63852008927CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sweet MemoriesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-MemoriesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sweet Memories.app/Sweet Memories";
+			};
+			name = Debug;
+		};
+		4560FC681DE63852008927CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sweet MemoriesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-MemoriesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sweet Memories.app/Sweet Memories";
+			};
+			name = Release;
+		};
+		4560FC6A1DE63852008927CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Sweet MemoriesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-MemoriesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Sweet Memories";
+			};
+			name = Debug;
+		};
+		4560FC6B1DE63852008927CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Sweet MemoriesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nought.Sweet-MemoriesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Sweet Memories";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4560FC331DE63851008927CA /* Build configuration list for PBXProject "Sweet Memories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4560FC611DE63852008927CA /* Debug */,
+				4560FC621DE63852008927CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4560FC631DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet Memories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4560FC641DE63852008927CA /* Debug */,
+				4560FC651DE63852008927CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4560FC661DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet MemoriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4560FC671DE63852008927CA /* Debug */,
+				4560FC681DE63852008927CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4560FC691DE63852008927CA /* Build configuration list for PBXNativeTarget "Sweet MemoriesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4560FC6A1DE63852008927CA /* Debug */,
+				4560FC6B1DE63852008927CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4560FC421DE63851008927CA /* Sweet_Memories.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4560FC431DE63851008927CA /* Sweet_Memories.xcdatamodel */,
+			);
+			currentVersion = 4560FC431DE63851008927CA /* Sweet_Memories.xcdatamodel */;
+			path = Sweet_Memories.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4560FC301DE63851008927CA /* Project object */;
+}
