@@ -11,6 +11,8 @@
 		450848951DE9F25500AD8606 /* AddNewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450848941DE9F25500AD8606 /* AddNewTableViewController.swift */; };
 		450848971DEA0BFB00AD8606 /* SweetMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450848961DEA0BFB00AD8606 /* SweetMemory.swift */; };
 		4508489C1DEA324A00AD8606 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */; };
+		455883C31DEB85760011A411 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455883C21DEB85760011A411 /* DetailTableViewController.swift */; };
+		455883C71DEC7C3A0011A411 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455883C61DEC7C3A0011A411 /* DetailTableViewCell.swift */; };
 		4560FC3C1DE63851008927CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC3B1DE63851008927CA /* AppDelegate.swift */; };
 		4560FC411DE63851008927CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4560FC3F1DE63851008927CA /* Main.storyboard */; };
 		4560FC441DE63852008927CA /* Sweet_Memories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4560FC421DE63851008927CA /* Sweet_Memories.xcdatamodeld */; };
@@ -42,6 +44,8 @@
 		450848941DE9F25500AD8606 /* AddNewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTableViewController.swift; sourceTree = "<group>"; };
 		450848961DEA0BFB00AD8606 /* SweetMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetMemory.swift; sourceTree = "<group>"; };
 		4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		455883C21DEB85760011A411 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		455883C61DEC7C3A0011A411 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		4560FC381DE63851008927CA /* Sweet Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sweet Memories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4560FC3B1DE63851008927CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4560FC401DE63851008927CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,9 +112,11 @@
 				4560FC3B1DE63851008927CA /* AppDelegate.swift */,
 				4560FC3F1DE63851008927CA /* Main.storyboard */,
 				4508489B1DEA324A00AD8606 /* MainTableViewCell.swift */,
+				455883C61DEC7C3A0011A411 /* DetailTableViewCell.swift */,
+				455883C21DEB85760011A411 /* DetailTableViewController.swift */,
+				450848921DE9F19400AD8606 /* MainTableViewController.swift */,
 				450848941DE9F25500AD8606 /* AddNewTableViewController.swift */,
 				450848961DEA0BFB00AD8606 /* SweetMemory.swift */,
-				450848921DE9F19400AD8606 /* MainTableViewController.swift */,
 				4560FC451DE63852008927CA /* Assets.xcassets */,
 				4560FC471DE63852008927CA /* LaunchScreen.storyboard */,
 				4560FC4A1DE63852008927CA /* Info.plist */,
@@ -268,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455883C31DEB85760011A411 /* DetailTableViewController.swift in Sources */,
 				450848951DE9F25500AD8606 /* AddNewTableViewController.swift in Sources */,
+				455883C71DEC7C3A0011A411 /* DetailTableViewCell.swift in Sources */,
 				4560FC441DE63852008927CA /* Sweet_Memories.xcdatamodeld in Sources */,
 				450848931DE9F19400AD8606 /* MainTableViewController.swift in Sources */,
 				450848971DEA0BFB00AD8606 /* SweetMemory.swift in Sources */,

@@ -14,7 +14,7 @@ class SweetMemory:NSManagedObject {
     @NSManaged var note:String
     @NSManaged var image:NSData?
     @NSManaged var rating:String?
-    @NSManaged var date:NSDate
+    @NSManaged var date:String
 }
 
 //class Restaurant {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData;
 
 class AddNewTableViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -85,12 +86,31 @@ class AddNewTableViewController: UITableViewController,UIImagePickerControllerDe
         }
         
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
-            restaurant.title = title!
-            restaurant.note = note!
+            sweetMemory = NSEntityDescription.insertNewObjectForEntityForName("SweetMemory", inManagedObjectContext: managedObjectContext) as! SweetMemory
+            sweetMemory.title = title!
+            sweetMemory.note = note!
+            
+            let date = NSDate();
+            let dateFormatter = NSDateFormatter()
+            //To prevent displaying either date or time, set the desired style to NoStyle.
+            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
+            dateFormatter.timeZone = NSTimeZone()
+            let localDate = dateFormatter.stringFromDate(date)
+            
+            print("UTC Time")
+            print(date)
+            print("Local Time")
+            print(localDate)
+            
+            sweetMemory.date=localDate;
+//            print("inside addNewTableViewController")
+//            print(date);
+//            print(localDate);
+//            print(sweetMemory.date);
             
             if let restaurantImage = imageView.image {
-                restaurant.image = UIImagePNGRepresentation(restaurantImage)
+                sweetMemory.image = UIImagePNGRepresentation(restaurantImage)
             }
             
             do {
