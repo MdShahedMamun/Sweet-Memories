@@ -32,7 +32,8 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
         
         // Load the restaurants from database
         let fetchRequest = NSFetchRequest(entityName: "SweetMemory")
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        // fetching data sorted by title
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
