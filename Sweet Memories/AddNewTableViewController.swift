@@ -34,69 +34,69 @@ class AddNewTableViewController: UITableViewController,UIImagePickerControllerDe
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.allowsEditing = false
-                imagePicker.sourceType = .PhotoLibrary
+                imagePicker.sourceType = .photoLibrary
                 imagePicker.delegate = self
                 
-                self.presentViewController(imagePicker, animated: true, completion: nil)
+                self.present(imagePicker, animated: true, completion: nil)
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // MARK: - UIImagePickerControllerDelegate methods
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
         imageView.clipsToBounds = true
         
-        let leadingConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        leadingConstraint.active = true
+        let leadingConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: imageView.superview, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        leadingConstraint.isActive = true
         
-        let trailingConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
-        trailingConstraint.active = true
+        let trailingConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: imageView.superview, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        trailingConstraint.isActive = true
         
-        let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        topConstraint.active = true
+        let topConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: imageView.superview, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+        topConstraint.isActive = true
         
-        let bottomConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: imageView.superview, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        bottomConstraint.active = true
+        let bottomConstraint = NSLayoutConstraint(item: imageView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: imageView.superview, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
+        bottomConstraint.isActive = true
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func save(sender:UIBarButtonItem) {
+    @IBAction func save(_ sender:UIBarButtonItem) {
         let title = titleTextField.text
         let note = noteTextView.text
         
         // Validate input fields
         if title == "" || note == ""{
-            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
             
             return
         }
         
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-            sweetMemory = NSEntityDescription.insertNewObjectForEntityForName("SweetMemory", inManagedObjectContext: managedObjectContext) as! SweetMemory
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
+            sweetMemory = NSEntityDescription.insertNewObject(forEntityName: "SweetMemory", into: managedObjectContext) as! SweetMemory
             sweetMemory.title = title!
             sweetMemory.note = note!
             
-            let date = NSDate();
-            let dateFormatter = NSDateFormatter()
+            let date = Date();
+            let dateFormatter = DateFormatter()
             //To prevent displaying either date or time, set the desired style to NoStyle.
-            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle //Set time style
-            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle //Set date style
-            dateFormatter.timeZone = NSTimeZone()
-            let localDate = dateFormatter.stringFromDate(date)
+            dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
+            dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+//            dateFormatter.timeZone = DateFormatter.timeZone
+            let localDate = dateFormatter.string(from: date)
             
             print("UTC Time")
             print(date)
@@ -122,7 +122,7 @@ class AddNewTableViewController: UITableViewController,UIImagePickerControllerDe
         }
         
         // Dismiss the view controller
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     /*

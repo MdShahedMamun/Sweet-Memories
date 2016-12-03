@@ -12,7 +12,7 @@ import CoreData
 class SweetMemory:NSManagedObject {
     @NSManaged var title:String
     @NSManaged var note:String
-    @NSManaged var image:NSData?
+    @NSManaged var image:Data?
     @NSManaged var rating:String?
     @NSManaged var date:String
 }

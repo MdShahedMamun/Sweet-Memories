@@ -13,30 +13,30 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
     // an array of objects
     var sweetMemories:[SweetMemory] = []
     
-    var fetchResultController:NSFetchedResultsController!
+    var fetchResultController:NSFetchedResultsController<NSFetchRequestResult>!
     
     var searchController:UISearchController!
     var searchResults:[SweetMemory] = []
     
-    var postShown = [Bool](count: 100000, repeatedValue: false)
+    var postShown = [Bool](repeating: false, count: 100000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Remove the title of the back button
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // Enable self sizing cells
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // Load the restaurants from database
-        let fetchRequest = NSFetchRequest(entityName: "SweetMemory")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SweetMemory")
         // fetching data sorted by title
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
             
             // only one
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -69,7 +69,7 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = true
@@ -78,28 +78,28 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.active {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive {
             return searchResults.count
         } else {
             return sweetMemories.count
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MainTableViewCell
         
-        let sweetMemory = (searchController.active) ? searchResults[indexPath.row] : sweetMemories[indexPath.row]
+        let sweetMemory = (searchController.isActive) ? searchResults[indexPath.row] : sweetMemories[indexPath.row]
         
         // Configure the cell...
         cell.title.text = sweetMemory.title;
-        cell.thumbnailImageView.image = UIImage(data: sweetMemory.image!)
+        cell.thumbnailImageView.image = UIImage(data: sweetMemory.image! as Data)
         cell.note.text = sweetMemory.note;
         
         cell.date.text=sweetMemory.date;
@@ -111,22 +111,22 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let destinationController = segue.destinationViewController as! DetailTableViewController
-                destinationController.sweetMemory = (searchController.active) ? searchResults[indexPath.row] : sweetMemories[indexPath.row]
+                let destinationController = segue.destination as! DetailTableViewController
+                destinationController.sweetMemory = (searchController.isActive) ? searchResults[indexPath.row] : sweetMemories[indexPath.row]
             }
         }
     }
     
-    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
+    @IBAction func unwindToHomeScreen(_ segue:UIStoryboardSegue){
         
     }
     
     // Creating a Rotation/Translation Effect Using CATransform3D
-    override func tableView(tableView: UITableView, willDisplayCell cell:
-        UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell:
+        UITableViewCell, forRowAt indexPath: IndexPath) {
         
         // Determine if the post is displayed. If yes, we just return and no animation will be created
         if postShown[indexPath.row] {
@@ -148,42 +148,42 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
         
         cell.layer.transform = rotationTransform
         // Define the final state (After the animation)
-        UIView.animateWithDuration(1.0, animations: { cell.layer.transform =
+        UIView.animate(withDuration: 1.0, animations: { cell.layer.transform =
             CATransform3DIdentity })
     }
     
     // MARK: - Table view delegate
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .Delete {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            sweetMemories.removeAtIndex(indexPath.row)
+            sweetMemories.remove(at: indexPath.row)
         }
         
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         // Social Sharing Button
-        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: { (action, indexPath) -> Void in
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: { (action, indexPath) -> Void in
             
             let defaultText = "Write something... " + self.sweetMemories[indexPath.row].title+self.sweetMemories[indexPath.row].note
-            if let imageToShare = UIImage(data: self.sweetMemories[indexPath.row].image!) {
+            if let imageToShare = UIImage(data: self.sweetMemories[indexPath.row].image! as Data) {
                 let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-                self.presentViewController(activityController, animated: true, completion: nil)
+                self.present(activityController, animated: true, completion: nil)
             }
         })
         
         // Delete button
-        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete",handler: { (action, indexPath) -> Void in
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete",handler: { (action, indexPath) -> Void in
             
             // Delete the row from the database
-            if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.managedObjectContext {
                 
-                let restaurantToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as! SweetMemory
-                managedObjectContext.deleteObject(restaurantToDelete)
+                let restaurantToDelete = self.fetchResultController.object(at: indexPath) as! SweetMemory
+                managedObjectContext.delete(restaurantToDelete)
                 
                 do {
                     try managedObjectContext.save()
@@ -200,32 +200,32 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
         return [deleteAction, shareAction]
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if searchController.active {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
             return false
         } else {
             return true
         }
     }
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
-        case .Insert:
+        case .insert:
             if let _newIndexPath = newIndexPath {
-                tableView.insertRowsAtIndexPaths([_newIndexPath], withRowAnimation: .Fade)
+                tableView.insertRows(at: [_newIndexPath], with: .fade)
             }
-        case .Delete:
+        case .delete:
             if let _indexPath = indexPath {
-                tableView.deleteRowsAtIndexPaths([_indexPath], withRowAnimation: .Fade)
+                tableView.deleteRows(at: [_indexPath], with: .fade)
             }
-        case .Update:
+        case .update:
             if let _indexPath = indexPath {
-                tableView.reloadRowsAtIndexPaths([_indexPath], withRowAnimation: .Fade)
+                tableView.reloadRows(at: [_indexPath], with: .fade)
             }
             
         default:
@@ -235,22 +235,22 @@ class MainTableViewController: UITableViewController,NSFetchedResultsControllerD
         sweetMemories = controller.fetchedObjects as! [SweetMemory]
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
     
     // MARK: - Search
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             filterContentForSearchText(searchText)
             tableView.reloadData()
         }
     }
     
-    func filterContentForSearchText(searchText: String) {
+    func filterContentForSearchText(_ searchText: String) {
         searchResults = sweetMemories.filter({ (sweetMemory:SweetMemory) -> Bool in
-            let nameMatch = sweetMemory.title.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let nameMatch = sweetMemory.title.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             
             return nameMatch != nil
         })
